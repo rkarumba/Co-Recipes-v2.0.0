@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="apple-touch-icon" href="/img/icon-96x96.png" />
+
+		<meta name="apple-mobile-web-app-status-bar" content="#c1576a" />
+		<meta name="theme-color" content="#a83e51" />
+		<!-- =====BOX ICONS===== -->
+		<link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+
+		<!-- ===== CSS ===== -->
+		<link rel="stylesheet" href="/styles.css" />
+		<link rel="manifest" href="/manifest.json" />
+
+		<title>Co-Recipes | All your recipes in one place.</title>
+	</head>
+	<body>
+		<!--===== HEADER =====-->
+		<header class="l-header">
+			<nav class="nav bd-grid">
+				<div>
+					<a href="#" class="nav__logo">Co-Recipes.</a>
+				</div>
+
+				<div class="nav__toggle" id="nav-toggle">
+					<i class="bx bx-menu"></i>
+				</div>
+
+				<div class="nav__menu" id="nav-menu">
+					<div class="nav__close" id="nav-close">
+						<i class="bx bx-x"></i>
+					</div>
+
+					<ul class="nav__list">
+						<% if (user) { %>
+						<li class="nav__item"><a class="nav__link active">Welcome, <%= user.email %></a></li>
+						<li class="nav__item"><a href="/" class="nav__link active">Home</a></li>
+						<li class="nav__item"><a href="/search" class="nav__link">Search</a></li>
+						<li class="nav__item"><a href="/myrecipes" class="nav__link">My Recipes</a></li>
+						<li class="nav__item"><a href="/logout" class="nav__link">Log Out</a></li>
+						<%} else { %>
+						<li class="nav__item"><a href="/login" class="nav__link">Login</a></li>
+						<li class="nav__item"><a href="/signup" class="nav__link">Sign up</a></li>
+						<% } %>
+					</ul>
+				</div>
+			</nav>
+		</header>
+
+		<h5>OOPS!</h5>
+		<p>Currently you can't view this page without a connection.</p>
+		<a href="/" class='btn btn-dkk' ></a>Go to the Homepage</a>
+	
+		<!--===== GSAP =====-->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+
+		<!--===== MAIN JS =====-->
+		<script src="main.js"></script>
+		<script src="pwa.js"></script>
+		<script src="status.js"></script>
+
+		
+
+	</body>
+</html>

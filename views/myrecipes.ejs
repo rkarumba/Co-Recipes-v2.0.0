@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<link rel="apple-touch-icon" href="/img/icon-96x96.png" />
+
+		<meta name="apple-mobile-web-app-status-bar" content="#c1576a" />
+		<meta name="theme-color" content="#a83e51" />
+		<!-- =====BOX ICONS===== -->
+		<link href="https://cdn.jsdelivr.net/npm/boxicons@2.0.5/css/boxicons.min.css" rel="stylesheet" />
+
+		<!-- ===== CSS ===== -->
+		<link rel="stylesheet" href="/styles.css" />
+		<link rel="stylesheet" href="/bootstrap.css" />
+		<link rel="manifest" href="/manifest.json" />
+
+		<title>Co-Recipes | All your recipes in one place.</title>
+	</head>
+	<body>
+		<div class="containerz">
+			<!--===== HEADER =====-->
+			<header class="l-header">
+				<nav class="nav bd-grid">
+					<div>
+						<a href="/" class="nav__logo">Co-Recipes</a>
+					</div>
+
+					<div class="nav__toggle" id="nav-toggle">
+						<i class="bx bx-menu"></i>
+					</div>
+
+					<div class="nav__menu" id="nav-menu">
+						<div class="nav__close" id="nav-close">
+							<i class="bx bx-x"></i>
+						</div>
+
+						<ul class="nav__list">
+							<% if (user) { %>
+							<li class="nav__item"><a class="nav__link active">Welcome, <%= user.email %></a></li>
+							<li class="nav__item"><a href="/" class="nav__link active">Home</a></li>
+							<li class="nav__item"><a href="/search" class="nav__link">Search</a></li>
+							<li class="nav__item"><a href="/myrecipes" class="nav__link">My Recipes</a></li>
+							<li class="nav__item"><a href="/logout" class="nav__link">Log Out</a></li>
+							<%} else { %>
+							<li class="nav__item"><a href="/login" class="nav__link">Login</a></li>
+							<li class="nav__item"><a href="/signup" class="nav__link">Sign up</a></li>
+							<% } %>
+						</ul>
+					</div>
+				</nav>
+			</header>
+			<div id="getButtonContainer">
+				<h5>Featured Recipe of the Week</h5>
+				<button id="getButton" class="btn btn-dkk">Get Recipe</button>
+			</div>
+			<div id="cardBox1"></div>
+
+			<div class="footer-end">
+				<p>Powered By: <a href="https://developer.edamam.com/edamam-recipe-api">EDAMAM</a></p>
+				<p>Site Designed & Developed: <a href="https://facebook.com/Supreme590"">Raymond Karumba</a></p>
+			</div>
+		</div>
+
+		<!--===== GSAP =====-->
+		<script>
+			let askButton = document.querySelector('#getButton');
+			askButton.addEventListener('click', () => {
+				console.log('Recipe button pressed');
+				sendApiRequestForRecipe();
+			});
+		</script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js"></script>
+		<script
+			src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+			integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+			crossorigin="anonymous"
+		></script>
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
+			crossorigin="anonymous"
+		></script>
+
+		<!--===== MAIN JS =====-->
+		<script src="main.js"></script>
+		<script src="pwa.js"></script>
+		<script src="status.js"></script>
+
+		
+	</body>
+</html>
