@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const authRoutes = require('./routes/authRoutes');
 const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
+const PORT = process.env.PORT || 5200;
+
 // Exporting Auth Routes through the constant instance
 
 // Start Express App
@@ -22,7 +24,7 @@ app.set('view engine', 'ejs');
 const dbURI = 'mongodb+srv://kraymond:0700674030@cluster0.wd2x2.mongodb.net/node-auth-recipe-app';
 mongoose
 	.connect(dbURI, { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true })
-	.then((result) => app.listen(5200))
+	.then((result) => app.listen(PORT))
 	.catch((err) => console.log(err));
 
 // Registering routes
@@ -67,7 +69,3 @@ app.get('/index.ejs', function (req, res) {
 
 	res.sendFile(path.join(__dirname, 'index.ejs'));
 });
-
-
-
-
