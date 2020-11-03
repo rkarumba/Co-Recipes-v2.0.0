@@ -8,14 +8,6 @@ const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const PORT = process.env.PORT || 5200;
 
-const targetBaseUrl = 'https://co-recipes.herokuapp.com';
-
-function handleRequest(req, res) {
-	const targetUrl = targetBaseUrl + req.originalUrl;
-	res.redirect(targetUrl);
-}
-
-app.get('*', handleRedirect);
 
 // Exporting Auth Routes through the constant instance
 
