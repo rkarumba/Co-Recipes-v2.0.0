@@ -451,9 +451,7 @@ function useApiDataRecipe(data) {
         <a href="#" class="tag green">${data.hits[7].recipe.healthLabels[3]}</a>
          </div>
         <a href="${data.hits[7].recipe.url}" class="btn btn-dkk1">View Recipe</a>
-        <form action = '' method = 'POST' class='form1'>
-        <button class = "btn btn-dkk1" id='btnz' type="submit"> Save Recipe</button>
-        </form>
+     
     </div>
     </div>
 
