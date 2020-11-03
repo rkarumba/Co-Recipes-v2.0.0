@@ -8,7 +8,7 @@ const { requireAuth, checkUser } = require('./middleware/authMiddleware');
 
 const PORT = process.env.PORT || 5200;
 
-const targetBaseUrl = 'http://co-recipes.herokuapp.com';
+const targetBaseUrl = 'https://co-recipes.herokuapp.com';
 
 function handleRequest(req, res) {
 	const targetUrl = targetBaseUrl + req.originalUrl;
