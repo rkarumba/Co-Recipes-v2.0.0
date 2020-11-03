@@ -71,9 +71,3 @@ app.get('/index.ejs', function (req, res) {
 
 	res.sendFile(path.join(__dirname, 'index.ejs'));
 });
-app.get('/index.ejs', function (req, res) {
-	//send the correct headers
-	res.header('Content-Type', 'text/ejs');
-
-	res.sendFile(path.join(__dirname, 'index.ejs'));
-});
