@@ -11,7 +11,7 @@
     "express": "^4.17.1",
     "gasp": "0.0.2",
     "gsap": "^3.5.1",
-    "jsonwebtoken": "^8.5.1",
+    "jsonwebtoken": "^9.0.0",
     "mongoose": "^5.10.10",
     "validator": "^13.1.17"
   },
